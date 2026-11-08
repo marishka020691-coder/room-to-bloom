@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noimageindex">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>Room to Bloom — предпросмотр экранов</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; height: 100vh; height: 100dvh; min-height: 360px; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; color: #30352d; background: #e9ebe3; font: 14px/1.5 "Segoe UI", Arial, sans-serif; }
+    button, input, select { font: inherit; }
+    button, a, input, select { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    button:disabled { cursor: default; opacity: .45; }
+    :focus-visible { outline: 2px solid #62764d; outline-offset: 4px; }
+    .toolbar { padding: 20px 28px 14px; background: #f7f5ef; border-bottom: 1px solid #cdd2c3; }
+    .toolbar-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    h1 { margin: 0; font: 400 25px/1.2 Georgia, serif; letter-spacing: -.025em; }
+    .device-buttons { display: flex; flex-wrap: wrap; gap: 6px; }
+    .device-buttons button { min-height: 48px; padding: 10px 18px; border: 1px solid #cbd0c1; background: transparent; color: inherit; }
+    .device-buttons button[aria-pressed="true"] { background: #4b5141; border-color: #4b5141; color: #fff; }
+    .open-site { color: #35442e; text-decoration-thickness: 1px; text-underline-offset: 4px; min-height: 44px; display: inline-flex; align-items: center; }
+    .toolbar-options { display: flex; align-items: center; gap: 12px 22px; flex-wrap: wrap; margin-top: 12px; }
+    .page-option { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-width: 0; }
+    .page-option select { min-height: 40px; width: 230px; max-width: 100%; padding: 8px 10px; color: inherit; background: #fffdf8; border: 1px solid #cbd0c1; }
+    .fit-option { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; cursor: pointer; }
+    .fit-option input { width: 18px; height: 18px; margin: 0; accent-color: #4b5141; }
+    .rotate { min-height: 40px; padding: 8px 12px; background: transparent; border: 1px solid #cbd0c1; color: inherit; }
+    .screen-status { margin-left: auto; color: #59634e; font-size: 12px; font-variant-numeric: tabular-nums; }
+    .preview-surface { min-width: 0; min-height: 0; overflow: auto; padding: 20px; }
+    .frame-shell { position: relative; margin-inline: auto; }
+    .device-frame { position: absolute; top: 0; left: 0; width: max-content; padding: 8px; border: 1px solid #c3c9ba; border-radius: 12px; background: #f7f5ef; box-shadow: 0 10px 35px #30352d20; transform-origin: top left; }
+    .device-frame[data-device="tablet"], .device-frame[data-device="phone"] { padding: 10px; border-radius: 24px; background: #30352d; border-color: #30352d; }
+    iframe { display: block; width: 1440px; height: 900px; max-width: none; border: 0; border-radius: 5px; background: #fff; }
+    .device-frame[data-device="tablet"] iframe, .device-frame[data-device="phone"] iframe { border-radius: 13px; }
+    .preview-note { margin: 0; padding: 10px 24px; background: #f7f5ef; border-top: 1px solid #cdd2c3; color: #59634e; font-size: 12px; text-align: center; }
+    noscript { position: absolute; top: 200px; left: 20px; right: 20px; padding: 20px; background: #fff; z-index: 2; }
+    @media (max-width: 760px) {
+      .toolbar { padding: 14px 16px 10px; }
+      .toolbar-top { gap: 10px; }
+      h1 { font-size: 22px; }
+      .device-buttons { width: 100%; order: 3; }
+      .device-buttons button { flex: 1; padding-inline: 8px; font-size: 12px; }
+      .open-site { font-size: 12px; }
+      .toolbar-options { gap: 6px 14px; font-size: 12px; }
+      .screen-status { margin-left: 0; width: 100%; }
+      .preview-surface { padding: 12px; }
+      .preview-note { padding: 8px 14px; font-size: 11px; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .device-buttons button { transition: background .15s, color .15s; }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar-top">
+      <h1>Room to Bloom · превью</h1>
+      <div class="device-buttons" role="group" aria-label="Размер экрана">
+        <button type="button" data-device="desktop" aria-pressed="true">Компьютер</button>
+        <button type="button" data-device="tablet" aria-pressed="false">Планшет</button>
+        <button type="button" data-device="phone" aria-pressed="false">Телефон</button>
+      </div>
+      <a id="open-site" class="open-site" href="journal-classic.html" target="_blank" rel="noopener noreferrer">Открыть без рамки ↗</a>
+    </div>
+    <div class="toolbar-options">
+      <label class="page-option" for="page-preview">Вариант
+        <select id="page-preview">
+          <option value="journal-classic.html" selected>Классический ежедневник</option>
+          <option value="journal-album.html">Альбомный ежедневник</option>
+          <option value="magazine.html">Little Magazine</option>
+          <option value="journal-compare.html">Сравнение двух форматов</option>
+          <option value="journal.html">Сохранённый ежедневник</option>
+          <option value="index.html">Первая концепция</option>
+        </select>
+      </label>
+      <label class="fit-option"><input type="checkbox" id="fit-preview" checked>Уместить в окне</label>
+      <button class="rotate" type="button" id="rotate-preview" aria-label="Повернуть экран планшета или телефона" disabled>Повернуть экран ↻</button>
+      <output class="screen-status" id="screen-status" aria-live="polite"></output>
+    </div>
+  </header>
+  <main class="preview-surface" id="preview-surface" aria-label="Сайт в выбранном размере экрана">
+    <div class="frame-shell" id="frame-shell">
+      <div class="device-frame" id="device-frame" data-device="desktop">
+        <iframe id="site-preview" src="journal-classic.html" title="Предпросмотр сайта" width="1440" height="900"></iframe>
+      </div>
+    </div>
+    <noscript>Для переключения экранов включите JavaScript или <a href="journal-classic.html">откройте сайт напрямую</a>.</noscript>
+  </main>
+  <p class="preview-note">Рамка показывает вёрстку при выбранном размере экрана. Касания и плавность перелистывания также проверяйте на настоящем устройстве.</p>
+  <script>
+    (() => {
+      const pageSelect = document.getElementById('page-preview');
+      const openSite = document.getElementById('open-site');
+      const pages = new Map([...pageSelect.options].map(option => [option.value, option.textContent]));
+      const sizes = {
+        desktop: { width: 1440, height: 900 },
+        tablet: { width: 820, height: 1180 },
+        phone: { width: 390, height: 844 }
+      };
+      const buttons = [...document.querySelectorAll('[data-device]')].filter(element => element.tagName === 'BUTTON');
+      const surface = document.getElementById('preview-surface');
+      const shell = document.getElementById('frame-shell');
+      const device = document.getElementById('device-frame');
+      const frame = document.getElementById('site-preview');
+      const fit = document.getElementById('fit-preview');
+      const rotate = document.getElementById('rotate-preview');
+      const status = document.getElementById('screen-status');
+      let selected = 'desktop';
+      let landscape = false;
+      let width = sizes.desktop.width;
+      let height = sizes.desktop.height;
+      let scheduled = false;
+
+      function fitFrame() {
+        const style = getComputedStyle(surface);
+        const availableWidth = surface.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+        const availableHeight = surface.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+        const outerWidth = device.offsetWidth;
+        const outerHeight = device.offsetHeight;
+        const scale = fit.checked ? Math.max(.01, Math.min(1, availableWidth / outerWidth, availableHeight / outerHeight)) : 1;
+        device.style.transform = `scale(${scale})`;
+        shell.style.width = `${outerWidth * scale}px`;
+        shell.style.height = `${outerHeight * scale}px`;
+        status.textContent = `${width} × ${height} px · Масштаб ${Math.round(scale * 100)}%`;
+      }
+
+      function scheduleFit() {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(() => { scheduled = false; fitFrame(); });
+      }
+
+      function showDevice(value) {
+        selected = value;
+        const size = sizes[value];
+        width = landscape ? size.height : size.width;
+        height = landscape ? size.width : size.height;
+        frame.width = width;
+        frame.height = height;
+        frame.style.width = `${width}px`;
+        frame.style.height = `${height}px`;
+        device.dataset.device = value;
+        rotate.disabled = value === 'desktop';
+        buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.device === value)));
+        scheduleFit();
+      }
+
+      buttons.forEach(button => button.addEventListener('click', () => {
+        landscape = false;
+        showDevice(button.dataset.device);
+      }));
+      rotate.addEventListener('click', () => { landscape = !landscape; showDevice(selected); });
+      fit.addEventListener('change', scheduleFit);
+      new ResizeObserver(scheduleFit).observe(surface);
+      window.addEventListener('resize', scheduleFit);
+      function syncPage(value) {
+        pageSelect.value = value;
+        openSite.href = value;
+        frame.title = `Room to Bloom — ${pages.get(value)}`;
+      }
+
+      pageSelect.addEventListener('change', () => {
+        syncPage(pageSelect.value);
+        frame.src = pageSelect.value;
+      });
+      frame.addEventListener('load', () => {
+        // Local file browsers can restrict access to a child frame's location.
+        try {
+          const currentPage = new URL(frame.contentWindow.location.href).pathname.split('/').pop();
+          if (pages.has(currentPage)) syncPage(currentPage);
+        } catch { /* The selected page remains usable without location access. */ }
+        scheduleFit();
+      });
+      const requestedPage = new URLSearchParams(location.search).get('page');
+      const initialPage = pages.has(requestedPage) ? requestedPage : pageSelect.value;
+      syncPage(initialPage);
+      if (frame.getAttribute('src') !== initialPage) frame.src = initialPage;
+      const initial = new URLSearchParams(location.search).get('device');
+      showDevice(Object.hasOwn(sizes, initial) ? initial : 'desktop');
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+</body>
+</html>

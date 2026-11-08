@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noimageindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room to Bloom — сравнение ежедневников</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <style>
+    :root{font-family:'Segoe UI',Arial,sans-serif;color:#384936;background:#f6f2e9;font-synthesis:none}*{box-sizing:border-box}body{margin:0}a{color:inherit;text-decoration:none}button,a{touch-action:manipulation}button{font:inherit;cursor:pointer;color:inherit}button:focus-visible,a:focus-visible{outline:2px solid #78816a;outline-offset:4px}.shell{max-width:1500px;margin:auto;padding:22px 34px 26px}.topline{display:flex;justify-content:space-between;align-items:center;gap:15px}.wordmark{font:27px Georgia,serif;letter-spacing:-1.5px}.original{font-size:11px;color:#748065;border-bottom:1px solid #bec4af;padding-bottom:5px}header{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:28px 0 24px}h1{font:normal 44px/1.1 Georgia,serif;letter-spacing:-1.8px;margin:0}h1 i{font-weight:normal;color:#78816a}.intro{font-size:12px;line-height:1.8;color:#758068;max-width:360px;margin:0}.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:15px 0 19px;border-top:1px solid #d8ddcd}.controls button{border:1px solid #c7ceba;background:transparent;padding:9px 12px;font-size:10px;border-radius:2px}.controls button:hover,.controls button[aria-pressed=true]{background:#e6e9dc}.controls .open-both{background:#384936;color:#f6f2e9;border-color:#384936;margin-right:9px}.controls button:disabled{opacity:.5;cursor:wait}.formats{display:grid;grid-template-columns:1fr 1fr;gap:24px}.format{min-width:0}.format-heading{display:flex;gap:13px;align-items:baseline;margin:0 0 12px}.number{font-size:10px;color:#919b81}.format h2{font:normal 25px Georgia,serif;letter-spacing:-.8px;margin:0}.preview{aspect-ratio:8/5;overflow:hidden;background:#e7e3d6;position:relative;border:1px solid #d7dacb;border-radius:5px}.preview iframe{position:absolute;top:0;left:0;border:0;width:1280px;height:800px;transform-origin:top left;transform:scale(var(--preview-scale,.4))}.format-bottom{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-top:15px}.format p{font-size:11px;line-height:1.7;color:#758068;max-width:340px;margin:0}.full-view{white-space:nowrap;font-size:11px;border-bottom:1px solid #9da98e;padding:3px 0 6px}.full-view span{margin-left:10px}footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #d8ddcd;margin-top:27px;padding-top:15px;font-size:10px;color:#8a947d}#compare-status{margin:0}noscript p{font-size:12px}@media(max-width:800px){.shell{padding:18px}header{display:block;padding:28px 0 20px}h1{font-size:37px}.intro{margin-top:17px;max-width:100%}.formats{grid-template-columns:1fr;gap:30px}.controls{gap:6px}.controls button{padding:9px;font-size:9px}.format-bottom{gap:16px}.format p{max-width:65%}.format h2{font-size:24px}.original{font-size:10px}footer{font-size:9px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="topline"><span class="wordmark">room to bloom.</span><a class="original" href="journal.html">Сохранённый вариант ↗</a></div>
+    <header><h1>Два формата.<br><i>Одно настроение.</i></h1><p class="intro">Открой оба ежедневника и полистай одинаковые разделы. Так проще сравнить обложку, раскрытие и сами страницы.</p></header>
+    <nav class="controls" aria-label="Показать одинаковый раздел в обоих вариантах">
+      <button class="open-both" data-action="open" disabled>Открыть оба ↗</button>
+      <button data-action="close" aria-pressed="true" disabled>Обложки</button>
+      <button data-page="title-page" aria-pressed="false" disabled>Титульный</button>
+      <button data-page="story" aria-pressed="false" disabled>01 / История</button>
+      <button data-page="brand" aria-pressed="false" disabled>02 / Детали</button>
+      <button data-page="palette" aria-pressed="false" disabled>03 / Цвета</button>
+      <button data-page="collection" aria-pressed="false" disabled>04 / Коллекция</button>
+      <button data-page="contents" aria-pressed="false" disabled>Оглавление</button>
+    </nav>
+    <main class="formats">
+      <article class="format"><div class="format-heading"><span class="number">01</span><h2>Альбомный ежедневник</h2></div><div class="preview"><iframe src="journal-album.html" title="Предпросмотр альбомного ежедневника"></iframe></div><div class="format-bottom"><p>Широкая тканевая обложка. Размер книги сохраняется при открытии и перелистывании.</p><a class="full-view" href="journal-album.html">Во весь экран <span>↗</span></a></div></article>
+      <article class="format"><div class="format-heading"><span class="number">02</span><h2>Классический ежедневник</h2></div><div class="preview"><iframe src="journal-classic.html" title="Предпросмотр классического ежедневника"></iframe></div><div class="format-bottom"><p>Вертикальная обложка и два отдельных листа. Книга раскрывается в ширину, сохраняя высоту.</p><a class="full-view" href="journal-classic.html">Во весь экран <span>↗</span></a></div></article>
+    </main>
+    <footer><span>Та же канарейка. Те же маленькие радости.</span><p id="compare-status" role="status">Готовим оба ежедневника…</p></footer>
+    <noscript><p>Открой любой вариант по ссылке «Во весь экран». Для одновременного перелистывания нужен JavaScript.</p></noscript>
+  </div>
+  <script>
+    (() => {
+      const frames = [...document.querySelectorAll('iframe')];
+      const ready = new Set();
+      const controls = [...document.querySelectorAll('.controls button')];
+      const observer = new ResizeObserver(entries => entries.forEach(entry => entry.target.style.setProperty('--preview-scale', entry.contentRect.width / 1280)));
+      document.querySelectorAll('.preview').forEach(preview => observer.observe(preview));
+      window.addEventListener('message', event => {
+        if (!frames.some(frame => frame.contentWindow === event.source) || event.data?.type !== 'bloom-preview-ready') return;
+        ready.add(event.source);
+        if (ready.size === frames.length) {
+          controls.forEach(button => { button.disabled = false; });
+          document.getElementById('compare-status').textContent = 'Для деталей открой вариант во весь экран.';
+        }
+      });
+      controls.forEach(button => button.addEventListener('click', () => {
+        const action = button.dataset.action || 'page';
+        frames.forEach(frame => frame.contentWindow.postMessage({ type: 'bloom-preview', action, id: button.dataset.page }, '*'));
+        controls.forEach(control => { if (control.hasAttribute('aria-pressed')) control.setAttribute('aria-pressed', String(control === button || (action === 'open' && control.dataset.page === 'title-page'))); });
+      }));
+    })();
+  </script>
+</body>
+</html>

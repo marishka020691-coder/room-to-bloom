@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noimageindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8e5db">
+  <meta name="description" content="A little magazine from Room to Bloom. Six small stories of everyday joy, thoughtful gifts and a little room to grow.">
+  <title>Room to Bloom — The Little Magazine</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/botanical-composition.png" fetchpriority="high">
+  <link rel="stylesheet" href="magazine.css">
+  <script src="magazine.js" defer></script>
+</head>
+<body class="mag-closed">
+  <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="spark" viewBox="0 0 32 32"><path d="M16 2v28M2 16h28M6 6l20 20M6 26 26 6" fill="none" stroke="currentColor" stroke-width="1"/></symbol>
+    <symbol id="contents-icon" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M3 6h1M3 12h1M3 18h1" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></symbol>
+    <symbol id="print-icon" viewBox="0 0 24 24"><path d="M6 8V3h12v5M6 17H3V9h18v8h-3M6 14h12v7H6Zm11-3h1" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></symbol>
+  </defs></svg>
+
+  <header class="app-bar">
+    <a class="small-wordmark" href="#cover" id="home-link" aria-label="Room to Bloom, back to the cover">room to bloom<span>.</span></a>
+    <span class="app-edition">A LITTLE MAGAZINE / NO. 01</span>
+    <div class="app-tools"><button id="contents-button" aria-haspopup="dialog"><svg aria-hidden="true"><use href="#contents-icon"/></svg><span>Contents</span></button><button id="print-button" aria-label="Print or save this issue"><svg aria-hidden="true"><use href="#print-icon"/></svg><span>Keep this issue</span></button></div>
+  </header>
+
+  <main class="magazine-desk" id="magazine-desk">
+    <div class="desk-note" aria-hidden="true"><span>Something lovely<br>to leaf through.</span><svg><use href="#spark"/></svg></div>
+    <div class="mag-shell" id="mag-shell">
+      <section class="mag-cover" id="cover" aria-labelledby="cover-title">
+        <div class="cover-overline"><span>THE EVERYDAY ISSUE</span><span>NO. 01</span></div>
+        <h1 class="cover-title" id="cover-title">Room to<br>Bloom.</h1>
+        <p class="cover-subtitle">THE LITTLE MAGAZINE</p>
+        <div class="cover-art"><img src="assets/botanical-composition.png" alt="Our golden canary among a blush tulip, a peony and delicate botanical stems" width="1312" height="1184" fetchpriority="high" decoding="async"><span class="cover-art-caption">For every season<br>of being you.</span></div>
+        <div class="cover-teasers"><div><span>INSIDE THESE PAGES</span><p>Little things.<br><i>A little more meaningful.</i></p></div><div><span>A FEW LOVELY FINDS</span><p>Slow mornings, fresh pages<br>& gifts chosen with joy.</p></div></div>
+        <button class="open-issue" id="open-issue" aria-controls="reading"><span>OPEN A LITTLE JOY</span><span class="round-arrow"><svg aria-hidden="true"><use href="#arrow"/></svg></span></button>
+        <div class="cover-bottom"><span>EMBRACE & GROW THROUGH EVERY SEASON</span><span>01—06</span></div>
+      </section>
+
+      <div class="mag-reading" id="reading" hidden>
+        <div class="mag-stage" id="mag-stage" aria-label="The magazine pages">
+          <article id="page-hello" class="mag-page hello-page" data-page="0" aria-labelledby="hello-title" tabindex="-1">
+            <div class="page-content">
+              <div class="section-line"><span>A LITTLE HELLO</span><svg aria-hidden="true"><use href="#spark"/></svg></div>
+              <h2 id="hello-title" class="hello-title">Hello,<br><i>lovely you.</i></h2>
+              <p class="lead hello-lead">A little room for everyday joy.</p>
+              <div class="letter-copy"><p>A fresh page. Your favourite mug. A small gift that says, “I thought of you.” Sometimes the little things are the things that make a day feel lovely.</p><p>Welcome to our little world. A place for gentle beginnings, everyday beauty, and the reminder that you can grow at your own pace.</p><p>Take a moment. Turn a page.<br>There’s something here for you.</p></div>
+              <div class="letter-signature"><img data-src="assets/canary-v2.png" alt="" width="1536" height="1024" decoding="async"><noscript><img src="assets/canary-v2.png" alt="" width="1536" height="1024" decoding="async"></noscript><p>With a little warmth,<br><span>Room to Bloom</span></p></div>
+              <p class="hello-postscript">For whatever season you’re in.</p>
+            </div><footer class="page-folio"><span>ROOM TO BLOOM / A LITTLE HELLO</span><span>01</span></footer>
+          </article>
+
+          <article id="page-story" class="mag-page story-page" data-page="1" aria-labelledby="story-title" tabindex="-1" hidden>
+            <div class="page-content">
+              <div class="section-line"><span>OUR STORY</span><span>A GENTLE BEGINNING</span></div>
+              <h2 id="story-title"><i>You don’t have to<br>bloom all at once.</i></h2>
+              <figure class="story-figure"><img data-src="assets/hero.png" alt="A cream Room to Bloom journal, canary mug and blush gift box beside peonies" width="1536" height="1024" decoding="async"><noscript><img src="assets/hero.png" alt="A cream Room to Bloom journal, canary mug and blush gift box beside peonies" width="1536" height="1024" decoding="async"></noscript><figcaption>Ordinary moments. Lovely possibilities.</figcaption></figure>
+              <div class="story-columns"><p class="story-pull">Room to rest.<br>Room to grow.<br>Room for joy.</p><div><p>Room to Bloom begins with a simple belief: we all deserve a little room. To pause, to try again, to notice something beautiful.</p><p>We bring that feeling to the things you reach for every day. Thoughtful details, a familiar little bird, and gentle encouragement for wherever life finds you.</p></div></div>
+            </div><footer class="page-folio"><span>ROOM TO BLOOM / OUR STORY</span><span>02</span></footer>
+          </article>
+
+          <article id="page-world" class="mag-page world-page" data-page="2" aria-labelledby="world-title" tabindex="-1" hidden>
+            <div class="page-content">
+              <div class="section-line"><span>LITTLE THINGS, LITTLE JOYS</span><span>THE BRAND WORLD</span></div>
+              <h2 id="world-title">A familiar bird.<br><i>A softer kind of world.</i></h2>
+              <div class="botanical-study"><div class="study-notes"><span class="tiny-label">01 / THE CANARY</span><p>A small, bright<br>sign of hope.</p><span class="study-rule"></span><span class="tiny-label">02 / THE GARDEN</span><p>Fresh beginnings.<br>Room to open up.</p></div><img data-src="assets/botanical-composition.png" alt="The brand’s yellow canary, blush tulip and peony on connected stems" width="1312" height="1184" decoding="async"><noscript><img src="assets/botanical-composition.png" alt="The brand’s yellow canary, blush tulip and peony on connected stems" width="1312" height="1184" decoding="async"></noscript></div>
+              <p class="world-caption">A little sunshine. A garden in bloom. Details that feel like a familiar friend.</p>
+              <div class="palette-heading"><span class="tiny-label">COLOURS BORROWED FROM THE EVERYDAY</span><span>01—05</span></div>
+              <div class="colour-strip" aria-label="The Room to Bloom colour palette"><div style="--swatch:#f6f2e9"><span></span><strong>Warm Cream</strong><small>#F6F2E9</small></div><div style="--swatch:#78816a"><span></span><strong>Garden Sage</strong><small>#78816A</small></div><div style="--swatch:#e8bc56"><span></span><strong>Sunshine</strong><small>#E8BC56</small></div><div style="--swatch:#d8a496"><span></span><strong>Petal Blush</strong><small>#D8A496</small></div><div style="--swatch:#384936"><span></span><strong>Botanical</strong><small>#384936</small></div></div>
+              <p class="palette-note">Warm paper, a gentle green, and a little colour from the garden.</p>
+            </div><footer class="page-folio"><span>ROOM TO BLOOM / LITTLE DETAILS</span><span>03</span></footer>
+          </article>
+
+          <article id="page-collection" class="mag-page collection-page" data-page="3" aria-labelledby="collection-title" tabindex="-1" hidden>
+            <div class="page-content">
+              <div class="section-line"><span>THE COLLECTION</span><span>THE EVERYDAY EDIT</span></div>
+              <h2 id="collection-title"><i>Everyday things.<br>A little more meaningful.</i></h2>
+              <p class="collection-intro">For thoughts, slow mornings, and all the lovely in-between.</p>
+              <div class="collection-edit">
+                <figure class="editorial-product"><button class="product-art journal-art" data-product="journal" aria-label="Take a closer look at The Everyday Journal"><span class="image-arrow" aria-hidden="true">↗</span></button><figcaption><span class="tiny-label">01 / FOR YOUR THOUGHTS</span><h3><button data-product="journal">The Everyday Journal</button></h3><p>A fresh page. A little possibility.</p></figcaption></figure>
+                <figure class="editorial-product"><button class="product-art mug-art" data-product="mug" aria-label="Take a closer look at The Slow Morning Mug"><span class="image-arrow" aria-hidden="true">↗</span></button><figcaption><span class="tiny-label">02 / FOR A SLOWER START</span><h3><button data-product="mug">The Slow Morning Mug</button></h3><p>A little sunshine with your first cup.</p></figcaption></figure>
+                <figure class="editorial-product"><button class="product-art stationery-art" data-product="stationery" aria-label="Take a closer look at Little Notebooks and Notes"><span class="notebook-stack" aria-hidden="true"></span><span class="notecard"><span>room to bloom.</span><img data-src="assets/canary-v2.png" alt="" width="1536" height="1024" decoding="async"><noscript><img src="assets/canary-v2.png" alt="" width="1536" height="1024" decoding="async"></noscript><i>A little note for you.</i></span><span class="paper-pencil" aria-hidden="true"></span><span class="image-arrow" aria-hidden="true">↗</span></button><figcaption><span class="tiny-label">03 / FOR IDEAS & LITTLE HELLOS</span><h3><button data-product="stationery">Little Notebooks & Notes</button></h3><p>Fresh ideas. Small words to share.</p></figcaption></figure>
+                <figure class="editorial-product"><button class="product-art tshirt-art" data-product="tshirt" aria-label="Take a closer look at The Everyday Bloom Tee"><span class="image-arrow" aria-hidden="true">↗</span></button><figcaption><span class="tiny-label">04 / FOR WHEREVER YOU GO</span><h3><button data-product="tshirt">The Everyday Bloom Tee</button></h3><p>A little encouragement to carry with you.</p></figcaption></figure>
+              </div><button class="text-link collection-gift-link" data-go="4">Something to give? Turn to gifts <span aria-hidden="true">↗</span></button>
+            </div><footer class="page-folio"><span>ROOM TO BLOOM / THE COLLECTION</span><span>04</span></footer>
+          </article>
+
+          <article id="page-gifts" class="mag-page gifts-page" data-page="4" aria-labelledby="gifts-title" tabindex="-1" hidden>
+            <div class="page-content">
+              <div class="section-line"><span>GIFTS WITH JOY</span><span>A LITTLE THOUGHTFULNESS</span></div>
+              <h2 id="gifts-title">For someone<br><i>who makes life lovely.</i></h2>
+              <div class="gift-feature"><button class="product-art gift-art" data-product="gift" aria-label="Take a closer look at The Little Joy Gift Box"><span class="image-arrow" aria-hidden="true">↗</span></button><div class="gift-occasions"><span class="tiny-label">A LITTLE SOMETHING FOR</span><p>A fresh start.</p><p>A thank-you.</p><p>A just-because.</p><span class="gift-asterisk" aria-hidden="true">✳</span></div></div>
+              <div class="gift-feature-caption"><h3><button data-product="gift">The Little Joy Gift Box</button></h3><p>A familiar signature. A soft ribbon. A little room for delight.</p></div>
+              <div class="keepsake-pair"><figure><button class="product-art frame-art" data-product="frame" aria-label="Explore The Little Moments Frame"><span class="image-arrow" aria-hidden="true">↗</span></button><figcaption>A moment to keep.</figcaption></figure><figure><button class="product-art jewellery-art" data-product="jewellery" aria-label="Explore The Treasured Things Box"><span class="image-arrow" aria-hidden="true">↗</span></button><figcaption>A home for little treasures.</figcaption></figure></div>
+              <p class="gift-note">The best part is the feeling it leaves behind.</p>
+            </div><footer class="page-folio"><span>ROOM TO BLOOM / THOUGHTFULLY GIVEN</span><span>05</span></footer>
+          </article>
+
+          <article id="page-beauty" class="mag-page beauty-page" data-page="5" aria-labelledby="beauty-title" tabindex="-1" hidden>
+            <div class="page-content">
+              <div class="section-line"><span>A LITTLE MORE BEAUTY</span><svg aria-hidden="true"><use href="#spark"/></svg></div>
+              <div class="closing-garden"><img data-src="assets/botanical-composition.png" alt="A yellow canary resting among a tulip, a peony and leaves" width="1312" height="1184" decoding="async"><noscript><img src="assets/botanical-composition.png" alt="A yellow canary resting among a tulip, a peony and leaves" width="1312" height="1184" decoding="async"></noscript><span class="garden-note">Keep a little<br>beauty close.</span></div>
+              <h2 id="beauty-title"><i>Whatever your season,<br>there’s room for you.</i></h2>
+              <p class="closing-copy">For the quiet moments. The fresh starts.<br>And the small joys waiting in an ordinary day.</p>
+              <button class="text-link closing-link" data-go="3">Explore the little things <svg aria-hidden="true"><use href="#arrow"/></svg></button>
+              <button class="close-magazine-button" id="close-magazine-end" aria-controls="cover"><svg aria-hidden="true"><use href="#arrow"/></svg><span>Close the magazine</span></button>
+              <div class="closing-signature"><span>room to bloom.</span><small>EMBRACE & GROW THROUGH EVERY SEASON</small></div>
+            </div><footer class="page-folio"><span>UNTIL THE NEXT LITTLE CHAPTER</span><span>06</span></footer>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <nav class="reader-nav" id="reader-nav" aria-label="Turn the magazine page" hidden><button class="reader-arrow previous" id="previous-page" aria-label="Previous pages"><svg aria-hidden="true"><use href="#arrow"/></svg><span>Previous</span></button><div class="reading-position"><span id="page-range">01—02 / 06</span><p id="page-description">A Little Hello · Our Story</p></div><button class="reader-arrow next" id="next-page" aria-label="Next pages"><span>Next</span><svg aria-hidden="true"><use href="#arrow"/></svg></button></nav>
+    <p class="cover-whisper" id="cover-whisper">A small issue. A whole little world.</p>
+  </main>
+
+  <footer class="app-footer"><span>Thoughts, flowers & everyday little joys.</span><span class="keyboard-hint">TURN A PAGE / ← →</span><button id="close-issue" hidden>Back to the cover <span aria-hidden="true">↗</span></button></footer>
+  <p class="sr-only" id="reading-status" role="status" aria-live="polite"></p>
+
+  <dialog id="contents-dialog" class="contents-dialog" aria-labelledby="contents-title"><button class="dialog-close" data-close-dialog aria-label="Close contents">×</button><span class="tiny-label">ROOM TO BLOOM / NO. 01</span><h2 id="contents-title">A few lovely<br><i>places to begin.</i></h2><nav class="contents-list" aria-label="Magazine contents"><button data-go="0"><span>01</span><strong>A Little Hello</strong><span aria-hidden="true">↗</span></button><button data-go="1"><span>02</span><strong>Our Story</strong><span aria-hidden="true">↗</span></button><button data-go="2"><span>03</span><strong>Little Things, Little Joys</strong><span aria-hidden="true">↗</span></button><button data-go="3"><span>04</span><strong>The Collection</strong><span aria-hidden="true">↗</span></button><button data-go="4"><span>05</span><strong>Gifts with Joy</strong><span aria-hidden="true">↗</span></button><button data-go="5"><span>06</span><strong>A Little More Beauty</strong><span aria-hidden="true">↗</span></button></nav><p class="contents-signoff">Take your time. There’s something here for you.</p></dialog>
+
+  <dialog id="product-dialog" class="product-dialog" aria-labelledby="product-title" aria-describedby="product-description"><button class="dialog-close" data-close-dialog aria-label="Close the closer look">×</button><div class="product-dialog-layout"><div class="detail-art" id="detail-art" role="img"></div><div class="detail-copy"><span class="tiny-label" id="product-category"></span><h2 id="product-title"></h2><p id="product-description"></p><span class="detail-rule"></span><p class="detail-signoff">A small reminder.<br><i>A little everyday joy.</i></p><p class="concept-note">From the Room to Bloom concept collection.</p><button class="text-link" data-close-dialog>Back to the magazine <span aria-hidden="true">↗</span></button></div></div></dialog>
+  <noscript><style>.app-tools,.reader-nav,.desk-note,.open-issue,.app-footer button,.cover-whisper{display:none!important}.magazine-desk{display:block}.mag-shell{width:min(680px,94%);height:auto;margin:20px auto}.mag-cover{position:relative;left:auto;transform:none;width:100%;height:auto;margin-bottom:25px}.mag-reading[hidden]{display:block!important}.mag-stage{height:auto}.mag-page[hidden],.mag-page{display:block!important;position:relative;left:auto!important;width:100%;height:auto;min-height:600px;margin-bottom:20px}.page-content{position:relative!important;transform:none!important}.product-art{pointer-events:none}</style></noscript>
+</body>
+</html>
